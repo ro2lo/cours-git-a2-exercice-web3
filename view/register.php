@@ -22,7 +22,7 @@
 					</div>
 					<div class="form-input">
 						<span class="password">
-							<input name="email" type="password" placeholder="Password">
+							<input name="password" type="password" placeholder="Password">
 						</span>
 					</div>
 
@@ -39,7 +39,8 @@ if(!empty($_POST['submit'])){
 	$username = 'username';
 	$email = 'email';
 	$password ='password';
-	
+
+
 
 
 }
