@@ -32,7 +32,6 @@ if (isset($_POST['email']) && !empty($_POST['email']) &&
         $error = "Mauvais identifiants";
         echo $error;
     }
-    header('Location: dashboard.php');
 }
 
 /******************************** 
