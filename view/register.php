@@ -35,12 +35,8 @@
 		</div>
 	</section>
 	<?
-if(!empty($_POST['submit'])){
-	$username = 'username';
-	$email = 'email';
-	$password ='password';
 
 
 
 
-}
+

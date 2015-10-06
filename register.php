@@ -8,6 +8,9 @@ require('model/functions.fn.php');
 
 if(isset($_POST) && !empty($_POST)) {
 
+	$email = $_POST['email'];
+	$password = $_POST['password'];
+	$username = $_POST['username'];
 	/* isEmailAvailable
 		return :
 			true if available
@@ -15,7 +18,7 @@ if(isset($_POST) && !empty($_POST)) {
 		$db -> 				database object
 		$email -> 			field value : email
 	*/
-	$email_ok = isEmailAvailable($db, "git@initiation.com");
+	$email_ok = isEmailAvailable($db, $email);
 
 	/* isUsernameAvailable
 		return :
@@ -23,8 +26,9 @@ if(isset($_POST) && !empty($_POST)) {
 			false if not available
 		$db -> 				database object
 		$username -> 			field value : username
+
 	*/
-	$username_ok = isUsernameAvailable($db, "Git");
+	$username_ok = isUsernameAvailable($db, $username);
 
 
 	if ($email_ok && $username_ok) {
@@ -37,16 +41,16 @@ if(isset($_POST) && !empty($_POST)) {
 			$email -> 			field value : email
 			$password -> 		field value : password
 		*/
-		userRegistration($db, "Git", "git@initiation.com", "password");
+		userRegistration($db, $username, $email, $password);
 		header('Location: login.php');
 	}
 
 	if (!$email_ok) {
-		//
+		$error='echec de l inscription';
 	}
 
 	if (!$username_ok) {
-		//
+		echo'reussite de l inscription';
 	}
 
 }
